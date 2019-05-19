@@ -24,28 +24,25 @@ $(document).ready(function () {
 /********ボタンが生えてくるアニメーション******/
 
 $(function () {
-  $(".others .button").css("opacity", "0");
   $(window).scroll(function () {
     $(".others__contents").each(function () {
       var imgPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
-
       if (scroll > imgPos - windowHeight + windowHeight / 4) {
         console.log(".othersの条件成立");
         $(".button", this).css("opacity", "1");
         $(".button", this).css("bottom", "10%");
-        //$(".section_textContent").css("top", "50%");
       } else {
         $(".button", this).css("opacity", "0");
       }
     });
   });
 });
+
 $(function () {
-  $(".section_textContent").css("opacity", "0");
   $(window).scroll(function () {
-    $(".section_textContent").each(function () {
+    $(".section_textContent:not(:first)").each(function () {
       var imgPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
