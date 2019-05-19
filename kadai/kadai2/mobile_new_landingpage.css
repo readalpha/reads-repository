@@ -1,0 +1,304 @@
+@charset "UTF-8";
+/*reset.css*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/************recet.cssここまで******************/
+
+/*imgの全体設定*/
+img{
+  vertical-align: bottom;
+}
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { display: inline !important; }
+.sp { display: none !important; }
+
+/*全体のフォントサイズの指定*/
+body{
+  font-size:16px;
+}
+/*コンテンツ全体の幅*/
+.wrapper{
+  max-width:1366px;
+  margin: 0 auto;
+}
+
+/*ヘッダー・フッター*/
+header img{
+  width:100%;
+}
+footer img{
+  width: 100%;
+}
+
+/*heroセクション*/
+.hero{
+  position:relative;
+}
+.hero > img{
+  width: 100%;
+  object-fit: cover;
+}
+.side_text{
+  position: absolute;
+  top: 50%;       /*テキスト部分のセンタリング*/
+  left: 13%;
+  transform:translateY(-50%);   /*top:50%の状態から、子要素を要素の半分だけ垂直方向上に移動させた*/
+  color:#fff;
+  text-shadow: 1px 1px black;
+}
+.side_text h1, .side_text h2{
+  font-size:32px;
+}
+.side_text > p{
+  font-size:14px;
+  margin-top:10px;
+  line-height:1.5;
+}
+.hero .displayNewline{
+  display:inline;
+}
+/*各ボタン共通設定*/
+
+.botton {
+  display:inline-block;
+  padding: 12px 20px 12px 20px;
+  margin-top:30px;
+  background-color: #fff;
+}
+.botton a{
+  text-shadow:none;
+  font-weight:bold;
+  font-size:14px;
+  text-decoration:none;
+  color:#000;
+}
+.botton a:hover{
+  color:#808080;
+}
+/*Font awesomeをCSSで実装*/
+.iconArrowNext:after{
+  font-family:"Font Awesome 5 Free";
+  content:"\f30b";
+  font-weight:900;    /*solidなら900,regularなら400*/
+  font-size:16px;
+}
+/*各ボタン共通設定 ここまで*/
+
+/*logoセクション*/
+/*ロゴとテキストの位置決め*/
+.logo_inner{
+  padding: 50px 0; /*元々marginで位置を調節していたが、innerにmarginは使いたくないのでpaddingとtext-align:centerで位置を調整*/
+  text-align:center;
+}
+/*ロゴのテキスト*/
+.logo_inner p{
+  margin-top:20px;
+  line-height:2;
+  font-size:13px;
+}
+.logo .displayNewline{
+  display:none;
+}
+
+/*image1(画像２枚横に並んでるところ)*/
+/*横並び画像２枚の設定*/
+.image1 > img{
+  display:block;  /*画像を横に並べる*/
+  float:left;
+  box-sizing:border-box;  /*paddingとwidthを合わせて、親要素の50%で表示*/
+  width:50%;
+  padding: 2%;
+  height: 500px;    /*よくわからないが、heightを指定しないといい感じに画像が表示されない*/
+  object-fit:cover;
+}
+/*.image1のfloatを解除*/
+.image1:after{
+  content: "";
+  clear: both;
+  display:block;
+}
+/*image2セクション*/
+.image2{
+  position:relative;
+}
+.image2 > img{
+  width: 100%;
+}
+.image2 .displayNewline{
+  display:inline;
+}
+
+/*image3セクション*/
+.image3{
+  position:relative;
+}
+.image3 img{ /*NLの画像*/
+  width:100%;
+}
+.image3 .displayNewline{
+  display:inline;
+}
+/*NLのボックス*/
+.image3_box{
+  background-color:#fff;
+  position:absolute;
+  top: 25%;
+  right: 10%;
+}
+.image3_inner h2{
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight:bold;
+}
+.image3_inner{
+  padding: 40px 60px 60px 60px;
+}
+.image3_inner .botton{
+  margin-top: 40px;
+  background-color:#000;
+}
+.image3_inner .botton > a{
+  color:#fff;
+}
+.image3_inner .botton a:hover{
+  color:#808080;
+}
+
+/**********レスポンシブ設定ここから***********/
+@media(max-width:960px){
+  /*画像の切り替え*/
+  .pc { display: none !important; }
+  .sp { display: inline !important; }
+
+  /*header,footer画像*/
+  header img{
+    height: 60px;
+  }
+  footer img{
+    height:400px;
+  }
+
+    /******ヒーロー******/
+  .hero img{
+    height:720px;
+
+  }
+  /*.heroのサイドテキストのポジション修正*/
+  .side_text{
+    top:initial;  /*"initial" で値の初期化*/
+    left:10px;
+    bottom:10px;
+    transform:translateY(0); /*transformを初期化*/
+  }
+
+  .hero .displayNewline{
+    display:none;
+  }
+
+
+  /*********logo************/
+  .logo .displayNewline{
+  display:inline;
+}
+/*元のlogo画像が大きいのでwidthで調整*/
+.logo_inner > img{
+    box-sizing:border-box;
+    width:120px;
+
+  }
+  /*logo画像とテキストを合わせたものにpaddingを付与する。marginはいらないので初期化*/
+  .logo_inner{
+    width:auto;
+    margin:0;
+    padding: 5% 10%;
+  }
+
+  /*************image1****************/
+  .image1 > img{
+    box-sizing:border-box;
+    width:100%;
+    padding:5%;
+  }
+/****************image2****************/
+  .image2 img{
+    height:720px;
+    object-fit:cover;
+  }
+  .image2 .displayNewline{
+    display:none;
+  }
+/*****************image3**************/
+/*object-positionで元画像をいい感じにリミングした（が上手くいってない）*/
+  .image3 img{
+    width:100%;
+  }
+  .image3 .displayNewline{
+    display:none;
+  }
+/*デスクトップ版のNLコンテンツが.image3_boxを基準にpositionで配置してたので、それを初期化*/
+  .image3_box{
+    position: static;
+  }
+  /*あとはフォントサイズやpaddingの調整*/
+  .image3_inner{
+    padding:5%;
+  }
+  /*ニュースレターはこちら　のテキスト*/
+  /*inline-blockからblockにすることでボタン部分を引き伸ばしている*/
+   .image3_inner .botton{
+    width:100%;
+    box-sizing:border-box;
+    text-align:center;
+    margin-top: 20px;
+  }
+  .image3_inner > h2{
+    font-size:18px;
+  }
+}

@@ -1,0 +1,661 @@
+@charset "utf-8";
+/*reset.css*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/************recet.cssここまで******************/
+
+/*****************************************/
+/*************全体の共通設定****************/
+/*****************************************/
+/*imgの設定*/
+img{
+  width:100%;
+  vertical-align: bottom; /*imgの縦方向の揃え位置をbottomに指定*/
+}
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { display: block !important; }
+.sp { display: none !important; }
+/*アンカーの共通設定*/
+a{
+  text-decoration:none;
+  color:#000;
+}
+/*全体のフォントサイズの指定*/
+/*コンテンツ全体の幅を調整*/
+body{
+  font-size:16px;
+  max-width:1366px;
+  margin: 0 auto;
+}
+/*clearfix*/
+.clearfix:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+/*各コンテンツ内の.button共通設定*/
+.button{
+  width:250px;
+  display:inline-block;
+  padding:20px 0;
+  text-decoration:none;
+  font-size:16px;
+  text-align:center;
+}
+.button:hover{
+  color:#cbcbcb;
+}
+/*.buttonのFontawesome実装*/
+.button:after{
+  font-family:"Font Awesome 5 Free";
+  content:"\f30b";
+  font-weight:900;    /*solidなら900,regularなら400*/
+  font-size: 16px;
+}
+/*各セクション別の.buttonの色など*/
+.mod-black{
+  background-color:#000;
+  color:#fff;
+}
+.mod-white{
+  background-color:#fff;
+  color: #000;
+}
+/* 各section_textContent内の共通設定 */
+.section_textContent{
+  position:absolute;
+  top:100%;
+  left:9%;
+  transition: 1s all ease  0s;
+}
+.section_textContent--centering{
+  position:absolute;
+  transform:translateY(-50%);
+}
+/*
+.section_textContent:hover{
+  bottom: 50%;
+}
+*/
+.section_textContent > h3{
+  color:#fff;
+  font-weight:bold;
+  font-size: 32px;
+}
+.section_textContent > p{
+  color:#fff;
+  margin-top:20px;
+  font-size:16px;
+}
+/*<br>のOFF*/
+.displayNone_desktop{
+  display:none;
+}
+/********共通設定ここまで**********/
+
+/********ナビゲーションメニュー*********/
+.smallNavi{
+  font-size:0;
+}
+.smallNavi h1{
+  display:inline-block;
+  font-weight:bold;
+  font-size:16px;
+  padding: 15px;
+}
+.smallNavi ul{
+  display:inline-block;
+  border-left: 1px solid #000;
+}
+/*ナビゲーションメニューを作成*/
+.smallNavi li{
+  float:left;
+  padding: 0 15px;
+}
+.smallNavi a{
+  font-size:12px;
+}
+/********ヒーロー*********/
+.hero{
+  position:relative;
+}
+.hero .section_textContent{
+  transform:translateY(50%);
+}
+/********DAME5*********/
+.dame5{
+  position:relative;
+}
+.dame5 h3{
+  text-shadow: 1px 1px #000;
+}
+.dame5 .button{
+  margin-top:20px;
+}
+
+/********BLOOKLYN（カルーセル）*********/
+/*.slideとは、カルーセル内の各コンテンツの共通クラス*/
+.slide{
+  position:relative;
+}
+ .blooklyn > h2{
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+  margin: 60px 0 20px 0;
+}
+
+
+/*テキストの色を変更*/
+.slide h3,.slide > .section_textContent--centering > p{
+  color:#000;
+}
+.blooklyn .button{
+  margin-top:20px;
+}
+/*.marquee_boostだけ白色に*/
+.marqueeBoost  h3, .marqueeBoost > .section_textContent--centering > p{
+  color:#fff;
+  line-height:1.2;
+}
+
+/********JAMES HARDEN*********/
+.jamesHarden{
+  position:relative;
+}
+ .jamesHarden > h2{
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+  margin: 60px 0 20px 0;
+}
+.jamesHarden .button{
+  margin-top:20px;
+}
+/********others*********/
+
+.others{
+  padding: 30px 0 0 0;
+}
+/*ホバーアニメーション*/
+.others__contents{
+  float:left;
+  width:31.33%;
+  margin:0 1%;  /*要素の中の要素にmarginもたせて気持ち悪い。がpaddingだとtransform:scaleが思い通りに動作しない*/
+  position:relative;
+  overflow:hidden;
+}
+/*リンク範囲を画像全体に*/
+.others__contents > a{
+  display:inline-block;
+  width:100%;
+  background-color: #000;
+}
+.others__contents img:hover{
+  transform:scale(1.2);
+  transition-duration: 1s;
+  opacity: 0.6;
+}
+.others .button{
+  position:absolute;
+  left:9%;
+  bottom:0;
+  width:80%;
+  transition: 1s all ease 0s;
+}
+
+/*************aside*************/
+aside > h3{
+  font-size:26px;
+  font-weight:bold;
+  text-align:center;
+  padding:60px 0 40px 0;
+}
+.wrapper_aside_MenuSns{
+  width:70%;
+  margin: 0 auto;
+}
+.aside_menu, .aside_sns{
+  font-size:0;
+}
+.aside_menu{
+  text-align:center;
+}
+.aside_menu > li{
+  width:30%;
+  display:inline-block;
+  box-sizing:border-box;
+  padding:15px 5%;
+  border-left: 2px solid #ebebeb;  /*それぞれのli要素の左側borderのみ表示*/
+}
+.aside_menu a{
+  font-size:16px;
+}
+.aside_menu > li:first-child{
+  border-left: none;    /*一番左のborderだけ消す*/
+}
+/*********SNSのメニュー***********/
+.aside_sns{
+  text-align:center;
+  margin:30px auto 0 auto;
+  border-top: 2px solid #ebebeb;
+  padding-top: 30px;
+}
+.aside_sns > li{
+  box-sizing:border-box;
+  display:inline-block;
+  padding: 0 5%;
+}
+.aside_sns a{
+  display:inline-block;
+  width:100%;
+  font-weight:bold;
+  font-size:18px;
+}
+/*SNSのアイコンをAwesomefontで実装*/
+.aside_sns li > a:before{
+  font-family:"Font Awesome 5 Brands";
+  font-size:40px;
+  padding-right:20px;
+  vertical-align: middle;
+}
+.aside_sns li:first-child > a:before{
+  content:"\f09a";
+}
+.aside_sns li:nth-child(2) > a:before{
+  content:"\f081";
+}
+.aside_sns li:last-child > a:before{
+  content:"\f16d";
+}
+/***ハッシュタグのテキスト***/
+aside > p{
+  text-align:center;
+  padding:60px 0;
+  font-weight:bold;
+  font-size:20px;
+}
+
+/**************************************/
+/*******ここから下がモバイル設定***********/
+/**************************************/
+
+@media screen and (max-width:960px){
+  /****画像の切り替え****/
+  .pc { display: none !important; }
+  .sp { display: block !important; }
+
+  /*<br>のON*/
+  .displayNone_desktop{
+    display:inline;
+  }
+
+/*ナビゲーションメニューの調整*/
+  .smallNavi{
+    height:50px;
+    overflow:scroll;  /*はみ出た要素はスクロール*/
+    white-space:nowrap; /*自動改行させない*/
+  }
+/*各コンテンツのside_text,ボタンの配置*/
+  .section_textContent{
+    top:initial;
+    bottom:10%;
+  }
+  .section_textContent  > h3{
+    font-size: 20px;
+  }
+  .section_textContent > p{
+    font-size:14px;
+  }
+  .section_textContent--centering{
+    transform:translateY(0);
+  }
+/*各h2の大きさを調整*/
+  .blooklyn > h2,.jamesHarden > h2{
+    font-size:22px;
+  }
+/*その他コンテンツの調整*/
+
+  .others__contents{
+    width:90%;
+    margin:0 5% 5% 5%;
+    /*ちょっと無理やりな感じですが、paddingで枠を設定すると枠を無視して拡大するのでこうしました。*/
+
+  }
+/*************aside***************/
+  aside h3{
+    font-size:22px;
+  }
+  .wrapper_aside_MenuSns{
+    width:100%;
+  }
+  .aside_menu > li{
+    padding:0;
+  }
+  .aside_sns li{
+    width:33.33%;
+  }
+  .aside_sns  li  a{
+    line-height:1.2;
+    font-size:12px;
+  }
+  .aside_sns li  a:before{
+    display:block;
+    padding-right:0;
+  }
+  .aside_sns  span{
+    font-size:14px;
+  }
+  aside > p{
+    font-size: 14px;
+  }
+  .backToTop a{
+    display:block;
+    font-size:16px;
+    text-align:center;
+    padding:3% 0;
+    border-top: 2px solid #ebebeb;
+  }
+  .backToTop a:before{
+    font-family:"Font Awesome 5 Free";
+    content:"\f077";
+    font-weight:900;
+    font-size:16px;
+    padding-right:10px;
+  }
+}
+  /*********************************/
+  /**********owl-carousel***********/
+  /*********************************/
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */ }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%; }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none; }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next,
+  .owl-carousel button.owl-dot {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit; }
+  .owl-carousel.owl-loaded {
+    display: block; }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .owl-carousel.owl-hidden {
+    opacity: 0; }
+  .owl-carousel.owl-refresh .owl-item {
+    visibility: hidden; }
+  .owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .owl-carousel.owl-rtl {
+    direction: rtl; }
+  .owl-carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item {
+  /**
+			This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
+			calculation of the height of the owl-item that breaks page layouts
+		 */ }
+  .owl-carousel .owl-item .owl-lazy {
+    opacity: 0;
+    transition: opacity 400ms ease; }
+  .owl-carousel .owl-item .owl-lazy[src^=""], .owl-carousel .owl-item .owl-lazy:not([src]) {
+    max-height: 0; }
+  .owl-carousel .owl-item img.owl-lazy {
+    transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover {
+  -ms-transform: scale(1.3, 1.3);
+      transform: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
+
+
+/***********ここから下が自分が弄った部分**************/
+/*ドット部分*/
+
+  .owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    display: inline;
+  }
+.owl-theme .owl-dots .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 5px 7px;
+      background: #D6D6D6;
+      display: block;
+      -webkit-backface-visibility: visible;
+      transition: opacity 200ms ease;
+      border-radius: 30px;
+    }
+.owl-theme .owl-dots .owl-dot.active span{
+      background: #869791;
+    }
+
+/*owlcarouselのナビボタン**/
+/*位置を調整*/
+.owl-nav{
+  position:absolute;
+  top:50%;
+  width:100%;
+  transform:translateY(-50%);
+}
+/*ナビボタンをborderで表現*/
+.owl-prev > span,.owl-next > span{
+  display:block;
+  width:50px;
+  height:50px;
+  position:absolute;
+  transform:translateY(-50%);
+   border-top:5px solid  #7e7e7e;
+}
+.owl-prev > span{
+  left:2%;
+  border-left:5px solid  #7e7e7e;
+  transform: rotate(315deg);
+}
+.owl-next > span{
+  right:2%;
+  border-right:5px solid  #7e7e7e;
+  transform:rotate(45deg);
+}
