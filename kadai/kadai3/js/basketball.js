@@ -22,7 +22,6 @@ $(document).ready(function () {
 });
 
 /********ボタンが生えてくるアニメーション******/
-
 $(function () {
   $(window).scroll(function () {
     $(".others__contents").each(function () {
@@ -37,16 +36,10 @@ $(function () {
         $(".button", this).css("opacity", "0");
       }
     });
-  });
-});
-
-$(function () {
-  $(window).scroll(function () {
     $(".section_textContent:not(:first)").each(function () {
       var imgPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
-
       if (scroll > imgPos - windowHeight + windowHeight / 10) {
         var temp = imgPos - windowHeight;
         $(this).css("opacity", "1");

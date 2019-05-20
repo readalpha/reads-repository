@@ -352,8 +352,8 @@ aside > p{
   }
 /*各コンテンツのside_text,ボタンの配置*/
   .section_textContent{
-    top:initial;
-    bottom:10%;
+    /*top:initial;
+    bottom:10%;*/
   }
   .section_textContent  > h3{
     font-size: 20px;
