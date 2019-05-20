@@ -58,7 +58,6 @@ img{
 /* パソコンで見たときは"pc"のclassがついた画像が表示される */
 .pc { display: inline !important; }
 .sp { display: none !important; }
-
 /*全体のフォントサイズの指定*/
 body{
   font-size:16px;
@@ -68,7 +67,6 @@ body{
   max-width:1366px;
   margin: 0 auto;
 }
-
 /*ヘッダー・フッター*/
 header img{
   width:100%;
@@ -76,7 +74,6 @@ header img{
 footer img{
   width: 100%;
 }
-
 /*heroセクション*/
 .hero{
   position:relative;
@@ -87,8 +84,6 @@ footer img{
 }
 .side_text{
   position: absolute;
-  top: 50%;       /*テキスト部分のセンタリング*/
-  left: 13%;
   transform:translateY(-50%);   /*top:50%の状態から、子要素を要素の半分だけ垂直方向上に移動させた*/
   color:#fff;
   text-shadow: 1px 1px black;
@@ -101,11 +96,7 @@ footer img{
   margin-top:10px;
   line-height:1.5;
 }
-.hero .displayNewline{
-  display:inline;
-}
 /*各ボタン共通設定*/
-
 .botton {
   display:inline-block;
   padding: 12px 20px 12px 20px;
@@ -143,26 +134,13 @@ footer img{
   line-height:2;
   font-size:13px;
 }
-.logo .displayNewline{
-  display:none;
-}
-
 /*image1(画像２枚横に並んでるところ)*/
 /*横並び画像２枚の設定*/
 .image1 > img{
   display:block;  /*画像を横に並べる*/
-  float:left;
   box-sizing:border-box;  /*paddingとwidthを合わせて、親要素の50%で表示*/
-  width:50%;
-  padding: 2%;
   height: 500px;    /*よくわからないが、heightを指定しないといい感じに画像が表示されない*/
   object-fit:cover;
-}
-/*.image1のfloatを解除*/
-.image1:after{
-  content: "";
-  clear: both;
-  display:block;
 }
 /*image2セクション*/
 .image2{
@@ -171,10 +149,6 @@ footer img{
 .image2 > img{
   width: 100%;
 }
-.image2 .displayNewline{
-  display:inline;
-}
-
 /*image3セクション*/
 .image3{
   position:relative;
@@ -182,26 +156,16 @@ footer img{
 .image3 img{ /*NLの画像*/
   width:100%;
 }
-.image3 .displayNewline{
-  display:inline;
-}
 /*NLのボックス*/
 .image3_box{
   background-color:#fff;
-  position:absolute;
-  top: 25%;
-  right: 10%;
 }
 .image3_inner h2{
   font-size: 32px;
   line-height: 1.2;
   font-weight:bold;
 }
-.image3_inner{
-  padding: 40px 60px 60px 60px;
-}
 .image3_inner .botton{
-  margin-top: 40px;
   background-color:#000;
 }
 .image3_inner .botton > a{
@@ -211,7 +175,55 @@ footer img{
   color:#808080;
 }
 
-/**********レスポンシブ設定ここから***********/
+/*****************************************/
+/**********PC設定ここから*******************/
+/*****************************************/
+@media(min-width:961px){
+  .side_text{
+    top: 50%;       /*テキスト部分のセンタリング*/
+    left: 13%;
+  }
+  .hero .displayNone_desktop{
+    display:inline;
+  }
+  .logo .displayNone_desktop{
+    display:none;
+  }
+  .image1 > img{
+    float:left;
+    width:50%;
+    padding: 2%;
+  }
+  /*.clearfix*/
+  .image1:after{
+    content: "";
+    clear: both;
+    display:block;
+  }
+  .image2 .displayNone_desktop{
+    display:inline;
+  }
+  .image3 .displayNone_desktop{
+    display:inline;
+  }
+  .image3_box{
+    position:absolute;
+    top: 25%;
+    right: 10%;
+  }
+  .image3_inner{
+    padding: 40px 60px 60px 60px;
+  }
+  .image3_inner .botton{
+     margin-top: 40px;
+  }
+}
+
+
+
+/*****************************************/
+/**********モバイル設定ここから***********/
+/*****************************************/
 @media(max-width:960px){
   /*画像の切り替え*/
   .pc { display: none !important; }
@@ -224,34 +236,25 @@ footer img{
   footer img{
     height:400px;
   }
-
     /******ヒーロー******/
   .hero img{
-    height:720px;
-
+    height:70vh;
   }
   /*.heroのサイドテキストのポジション修正*/
   .side_text{
-    top:initial;  /*"initial" で値の初期化*/
     left:10px;
     bottom:10px;
     transform:translateY(0); /*transformを初期化*/
   }
 
-  .hero .displayNewline{
-    display:none;
-  }
-
-
   /*********logo************/
-  .logo .displayNewline{
+  .logo .displayNone_desktop{
   display:inline;
 }
 /*元のlogo画像が大きいのでwidthで調整*/
 .logo_inner > img{
     box-sizing:border-box;
     width:120px;
-
   }
   /*logo画像とテキストを合わせたものにpaddingを付与する。marginはいらないので初期化*/
   .logo_inner{
@@ -259,32 +262,28 @@ footer img{
     margin:0;
     padding: 5% 10%;
   }
-
   /*************image1****************/
-  .image1 > img{
+  .image1{
     box-sizing:border-box;
-    width:100%;
     padding:5%;
   }
+  .image1 > img{
+    width:100%;
+    padding:3%;
+  }
+
 /****************image2****************/
   .image2 img{
-    height:720px;
+    height:70vh;
     object-fit:cover;
   }
-  .image2 .displayNewline{
+  .image2 .displayNone_desktop{
     display:none;
   }
 /*****************image3**************/
-/*object-positionで元画像をいい感じにリミングした（が上手くいってない）*/
-  .image3 img{
-    width:100%;
-  }
-  .image3 .displayNewline{
-    display:none;
-  }
-/*デスクトップ版のNLコンテンツが.image3_boxを基準にpositionで配置してたので、それを初期化*/
-  .image3_box{
-    position: static;
+/*object-positionで元画像をいい感じにトリミングした（が上手くいってない）*/
+  .image3 .displayNone_desktop{
+    display:inline;
   }
   /*あとはフォントサイズやpaddingの調整*/
   .image3_inner{
