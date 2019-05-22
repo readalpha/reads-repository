@@ -29,25 +29,57 @@ $(function () {
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
       if (scroll > imgPos - windowHeight + windowHeight / 4) {
-        console.log(".othersの条件成立");
         $(".button", this).css("opacity", "1");
         $(".button", this).css("bottom", "10%");
       } else {
         $(".button", this).css("opacity", "0");
       }
     });
+
+
     $(".section_textContent:not(:first)").each(function () {
       var imgPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
-      if (scroll > imgPos - windowHeight + windowHeight / 10) {
-        var temp = imgPos - windowHeight;
+      var winW = $(window).width();
+      var devW = 767;
+      if (scroll > imgPos - windowHeight + windowHeight / 7) {
+        //var temp = imgPos - windowHeight;
         $(this).css("opacity", "1");
-        $(this).css("top", "50%");
+        
+        if (winW <= devW) {
+          //767px以下の時の処理
+          console.log("aaaaa");
+          $(this).css("top","70%");
+        } else {
+          //768pxより大きい時の処理
+          console.log("eeeeeee");
+          $(this).css("top", "50%");
+        }
+        
+        
       }
       else {
         $(this).css("opacity", "0");
+        
       }
     });
   });
+/*
+  $(window).on('load resize', function(){
+    var winW = $(window).width();
+    var devW = 767;
+    if (winW <= devW) {
+      //767px以下の時の処理
+      console.log("aaaaa");
+    } else {
+      //768pxより大きい時の処理
+      console.log("eeeeeee");
+    }
+    
+  });
+  */
+
+
 });
+

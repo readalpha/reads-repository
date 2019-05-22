@@ -350,6 +350,11 @@ aside > p{
     overflow:scroll;  /*はみ出た要素はスクロール*/
     white-space:nowrap; /*自動改行させない*/
   }
+
+  .hero .section_textContent{
+    top:80%;
+    transform:translateY(0);
+  }
 /*各コンテンツのside_text,ボタンの配置*/
   .section_textContent{
     /*top:initial;
