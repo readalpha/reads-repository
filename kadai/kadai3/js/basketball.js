@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   $(".blooklyn_slide").owlCarousel({
     loop: true,
@@ -36,7 +35,6 @@ $(function () {
       }
     });
 
-
     $(".section_textContent:not(:first)").each(function () {
       var imgPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
@@ -56,8 +54,6 @@ $(function () {
           console.log("eeeeeee");
           $(this).css("top", "50%");
         }
-        
-        
       }
       else {
         $(this).css("opacity", "0");
@@ -65,21 +61,5 @@ $(function () {
       }
     });
   });
-/*
-  $(window).on('load resize', function(){
-    var winW = $(window).width();
-    var devW = 767;
-    if (winW <= devW) {
-      //767px以下の時の処理
-      console.log("aaaaa");
-    } else {
-      //768pxより大きい時の処理
-      console.log("eeeeeee");
-    }
-    
-  });
-  */
-
-
 });
 

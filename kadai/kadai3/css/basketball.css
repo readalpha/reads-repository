@@ -174,6 +174,7 @@ body{
   opacity:1;
   top:50%;
   transform:translateY(50%);
+  transition: 0s all ease  0s;
 }
 /********DAME5*********/
 .dame5{
@@ -197,7 +198,6 @@ body{
   text-align:center;
   margin: 60px 0 20px 0;
 }
-
 
 /*テキストの色を変更*/
 .slide h3,.slide > .section_textContent--centering > p{
@@ -368,6 +368,9 @@ aside > p{
   }
   .section_textContent--centering{
     transform:translateY(0);
+  }
+  .marqueeBoost .section_textContent--centering{
+    transform:translateY(-40%);
   }
 /*各h2の大きさを調整*/
   .blooklyn > h2,.jamesHarden > h2{
