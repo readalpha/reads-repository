@@ -241,14 +241,12 @@ body{
 }
 
 /*************aside*************/
-aside > h3{
-  font-size:26px;
+aside h3{
   font-weight:bold;
   text-align:center;
   padding:60px 0 40px 0;
 }
 .wrapper_aside_MenuSns{
-  width:70%;
   margin: 0 auto;
 }
 .aside_menu, .aside_sns{
@@ -261,7 +259,6 @@ aside > h3{
   width:30%;
   display:inline-block;
   box-sizing:border-box;
-  padding:15px 5%;
   border-left: 2px solid #ebebeb;  /*それぞれのli要素の左側borderのみ表示*/
 }
 .aside_menu a{
@@ -286,7 +283,6 @@ aside > h3{
   display:inline-block;
   width:100%;
   font-weight:bold;
-  font-size:18px;
 }
 /*SNSのアイコンをAwesomefontで実装*/
 .aside_sns li > a:before{
@@ -309,7 +305,6 @@ aside > p{
   text-align:center;
   padding:60px 0;
   font-weight:bold;
-  font-size:20px;
 }
 
 /**************************************/
@@ -337,7 +332,21 @@ aside > p{
     width:31.33%;
     margin:0 1%;  /*要素の中の要素にmarginもたせて気持ち悪い。がpaddingだとtransform:scaleが思い通りに動作しない*/
   }
-  
+  aside h3{
+    font-size:26px;
+  }
+  .wrapper_aside_MenuSns{
+    width:70%;
+  }
+  .aside_menu > li{
+    padding:15px 5%;
+  }
+  .aside_sns a{
+    font-size:18px;
+  }
+  aside > p{
+    font-size:20px;
+  }
 
 }
 
