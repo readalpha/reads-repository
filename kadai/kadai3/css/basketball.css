@@ -48,10 +48,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/*カルーセルのdotを消した*/
-*{
-  outline:none;
-}
+
 /************recet.cssここまで******************/
 
 /*****************************************/
@@ -75,7 +72,7 @@ a{
 body{
   font-size:16px;
   max-width:1366px;
-  margin: 0 auto;
+  margin: 0 auto; /*1366px以上のとき画面中央寄せ*/
 }
 /*clearfix*/
 .clearfix:after{
@@ -123,25 +120,15 @@ body{
   position:absolute;
   transform:translateY(-50%);
 }
-/*
-.section_textContent:hover{
-  bottom: 50%;
-}
-*/
 .section_textContent > h3{
   color:#fff;
   font-weight:bold;
   font-size: 32px;
 }
 .section_textContent > p{
-  color:#fff;
-  margin-top:20px;
-  font-size:16px;
+  color:#fff; 
 }
-/*<br>のOFF*/
-.displayNone_desktop{
-  display:none;
-}
+
 /********共通設定ここまで**********/
 
 /********ナビゲーションメニュー*********/
@@ -174,6 +161,7 @@ body{
   opacity:1;
   top:50%;
   transform:translateY(50%);
+  transition: 0s all ease  0s;
 }
 /********DAME5*********/
 .dame5{
@@ -192,12 +180,10 @@ body{
   position:relative;
 }
  .blooklyn > h2{
-  font-size:40px;
   font-weight:bold;
   text-align:center;
   margin: 60px 0 20px 0;
 }
-
 
 /*テキストの色を変更*/
 .slide h3,.slide > .section_textContent--centering > p{
@@ -217,7 +203,6 @@ body{
   position:relative;
 }
  .jamesHarden > h2{
-  font-size:40px;
   font-weight:bold;
   text-align:center;
   margin: 60px 0 20px 0;
@@ -228,13 +213,10 @@ body{
 /********others*********/
 
 .others{
-  padding: 30px 0 0 0;
+  padding-top: 30px;
 }
 /*ホバーアニメーション*/
 .others__contents{
-  float:left;
-  width:31.33%;
-  margin:0 1%;  /*要素の中の要素にmarginもたせて気持ち悪い。がpaddingだとtransform:scaleが思い通りに動作しない*/
   position:relative;
   overflow:hidden;
 }
@@ -331,6 +313,35 @@ aside > p{
 }
 
 /**************************************/
+/*******ここから下がPC設定***************/
+/**************************************/
+
+@media screen and (min-width:961px){
+
+  .section_textContent > p{
+    margin-top:20px;
+    font-size:16px;
+  }
+  /*<br>のOFF*/
+  .displayNone_desktop{
+    display:none;
+  }
+  .blooklyn > h2{
+    font-size: 40px;
+  }
+  .jamesHarden > h2{
+    font-size:40px;
+  }
+  .others__contents{
+    float:left;
+    width:31.33%;
+    margin:0 1%;  /*要素の中の要素にmarginもたせて気持ち悪い。がpaddingだとtransform:scaleが思い通りに動作しない*/
+  }
+  
+
+}
+
+/**************************************/
 /*******ここから下がモバイル設定***********/
 /**************************************/
 
@@ -350,11 +361,12 @@ aside > p{
     overflow:scroll;  /*はみ出た要素はスクロール*/
     white-space:nowrap; /*自動改行させない*/
   }
-/*各コンテンツのside_text,ボタンの配置*/
-  .section_textContent{
-    /*top:initial;
-    bottom:10%;*/
+
+  .hero .section_textContent{
+    top:80%;
+    transform:translateY(0);
   }
+/*各コンテンツのside_text,ボタンの配置*/
   .section_textContent  > h3{
     font-size: 20px;
   }
@@ -363,6 +375,9 @@ aside > p{
   }
   .section_textContent--centering{
     transform:translateY(0);
+  }
+  .marqueeBoost .section_textContent--centering{
+    transform:translateY(-40%);
   }
 /*各h2の大きさを調整*/
   .blooklyn > h2,.jamesHarden > h2{
@@ -638,6 +653,9 @@ aside > p{
 .owl-theme .owl-dots .owl-dot.active span{
       background: #869791;
     }
+    .owl-dot{
+      outline:none;
+    }
 
 /*owlcarouselのナビボタン**/
 /*位置を調整*/
@@ -667,6 +685,3 @@ aside > p{
   transform:rotate(45deg);
 }
 
-.owl-dot:active{
-  border-style:none;
-}
