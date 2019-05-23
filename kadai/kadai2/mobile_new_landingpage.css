@@ -99,7 +99,7 @@ footer img{
 /*各ボタン共通設定*/
 .botton {
   display:inline-block;
-  padding: 12px 20px 12px 20px;
+  padding: 12px 20px 12px 40px;
   margin-top:30px;
   background-color: #fff;
 }
@@ -119,6 +119,7 @@ footer img{
   content:"\f30b";
   font-weight:900;    /*solidなら900,regularなら400*/
   font-size:16px;
+  padding-left:20px;
 }
 /*各ボタン共通設定 ここまで*/
 
