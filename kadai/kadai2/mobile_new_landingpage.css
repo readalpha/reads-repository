@@ -246,6 +246,9 @@ footer img{
     bottom:10px;
     transform:translateY(0); /*transformを初期化*/
   }
+  .hero .displayNone_desktop{
+    display:none;
+  }
 
   /*********logo************/
   .logo .displayNone_desktop{
